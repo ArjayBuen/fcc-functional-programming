@@ -97,3 +97,50 @@ const Window = function(tabs) {
     .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
     .join(workWindow.tabClose(1).tabOpen());
   console.log(finalTabs.tabs);
+
+
+  // The global variable
+let fixedValue = 4;
+
+function incrementer() {
+  // Only change code below this line
+
+return fixedValue+1;
+  // Only change code above this line
+}
+
+// The global variable
+//let fixedValue = 4;
+
+// Only change code below this line
+function incrementer(num) {
+
+return num+1;
+  // Only change code above this line
+}
+
+
+// The global variable
+const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+// Change code below this line
+function add(arr, bookName) {
+  let newArr=[...arr];
+  newArr.push(bookName);
+  return newArr;
+  
+  // Change code above this line
+}
+
+// Change code below this line
+function remove(arr, bookName) {
+  let newArr=[...arr];
+  const book_index = newArr.indexOf(bookName);
+  if (book_index >= 0) {
+
+    newArr.splice(book_index, 1);
+    return newArr;
+
+    // Change code above this line
+    }
+}
