@@ -340,3 +340,62 @@ function nonMutatingSplice(cities) {
   }
   nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"]); 
   //should return ["Chicago", "Delhi", "Islamabad"].
+
+  //console.log(parseInt(4.8));
+
+  function nonMutatingConcat(original, attach) {
+    // Only change code below this line
+  
+   return original.concat(attach);
+  
+    // Only change code above this line
+  }
+  
+  const first = [1, 2, 3];
+  const second = [4, 5];
+  nonMutatingConcat(first, second);
+
+  function nonMutatingPush(original, newItem) {
+    // Only change code below this line
+    return original.concat(newItem);
+  
+    // Only change code above this line
+  }
+  
+  //const first = [1, 2, 3];
+  //const second = [4, 5];
+  nonMutatingPush(first, second);
+
+  
+  //watchlist variable above
+  function getRating(watchList) {
+    // Only change code below this line
+    let averageRating= watchList
+      // Use filter to find films directed by Christopher Nolan
+      .filter(film => film.Director === "Christopher Nolan")
+      // Use map to convert their ratings from strings to numbers
+      .map(film => Number(film.imdbRating))
+      // Use reduce to add together their ratings
+      .reduce((sumOfRatings, rating) => sumOfRatings + rating) /
+    // Divide by the number of Nolan films to get the average rating
+    watchList.filter(film => film.Director === "Christopher Nolan").length;
+  
+  
+    // Only change code above this line
+    return averageRating;
+  }
+  
+  console.log(getRating(watchList));
+
+
+  const squareList = arr => {
+    // Only change code below this line
+    return arr.filter(num => num > 0 && num % parseInt(num) === 0)
+            .map(num => Math.pow(num, 2));;
+    // Only change code above this line
+  };
+  
+  const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+  console.log(squaredIntegers);
+  //squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]) should return [16, 1764, 36].
+  //squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3]) should return [9, 100, 49]
