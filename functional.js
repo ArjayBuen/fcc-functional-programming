@@ -399,3 +399,43 @@ function nonMutatingSplice(cities) {
   console.log(squaredIntegers);
   //squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]) should return [16, 1764, 36].
   //squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3]) should return [9, 100, 49]
+
+  function ascendingOrder(arr) {
+    return arr.sort(function(a, b) {
+      return a - b;
+    });
+  }
+  ascendingOrder([1, 5, 2, 3, 4]);
+  //This would return the value [1, 2, 3, 4, 5].
+
+  function descendingOrder(arr) {
+    // Only change code below this line
+    return arr.sort(function(a, b) {
+      return b - a; // Sort in descending order
+    });
+    // Only change code above this line
+  }
+  // Example usage:
+  const sortedArray = descendingOrder([5, 2, 8, 1, 4]);
+  console.log(sortedArray); // Output: [8, 5, 4, 2, 1]
+
+  function reverseAlpha(arr) {
+    return arr.sort(function(a, b) {
+      return a === b ? 0 : a < b ? 1 : -1;
+      // If a is equal to b, it returns 0.
+      // If a is less than b, it returns -1.
+      // If a is greater than b, it returns 1
+    });
+  }
+  
+  reverseAlpha(['l', 'h', 'z', 'b', 's']);
+  //This would return the value ['z', 's', 'l', 'h', 'b'].
+
+  function alphabeticalOrder(arr) {
+    // Only change code below this line
+    return arr.sort(function(a,b){
+      return a === b ? 0 : a < b ? -1 : 1;
+    });
+    // Only change code above this line
+  }
+  alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
