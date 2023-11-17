@@ -439,3 +439,122 @@ function nonMutatingSplice(cities) {
     // Only change code above this line
   }
   alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+
+
+  const globalArray = [5, 6, 3, 2, 9];
+  function nonMutatingSort(arr) {
+    // Only change code below this line
+  return [].concat(arr).sort(function(a, b) {
+      return a - b;
+  });
+    // Only change code above this line
+  }
+  nonMutatingSort(globalArray);
+  //nonMutatingSort(globalArray) should return [2, 3, 5, 6, 9]
+  //nonMutatingSort([1, 30, 4, 21, 100000]) should return [1, 4, 21, 30, 100000]
+  //nonMutatingSort([140000, 104, 99]) should return [99, 104, 140000]
+
+
+const str = "Hello World";
+const bySpace = str.split(" ");
+
+const otherString = "How9are7you2today";
+const byDigits = otherString.split(/\d/);
+//bySpace would have the value ["Hello", "World"] and 
+//byDigits would have the value ["How", "are", "you", "today"]
+
+function splitify(str) {
+  // Only change code below this line
+  return str.split(/\W/);
+  // Only change code above this line
+}
+splitify("Hello World,I-am code");
+//should return ["Hello", "World", "I", "am", "code"].
+splitify("Earth-is-our home") 
+//should return ["Earth", "is", "our", "home"].
+splitify("This.is.a-sentence") 
+//should return ["This", "is", "a", "sentence"]
+
+
+const arr = ["Hello", "World"];
+const strr = arr.join(" ");
+//strr would have a value of the string Hello World.
+
+function sentensify(str) {
+  // Only change code below this line
+
+return strr.split(/\W/).join(" ");
+//strr.replace(/\W/," ");
+  // Only change code above this line
+}
+sentensify("May-the-force-be-with-you");
+//should return the string May the force be with you.
+sentensify("The.force.is.strong.with.this.one") 
+//should return the string The force is strong with this one.
+sentensify("There,has,been,an,awakening") 
+//should return the string There has been an awakening
+
+
+// Only change code below this line
+function urlSlug(title) {
+
+  return title.toLowerCase().trim().split(/\s+/).join("-");
+  //title.toLowerCase().trim().replace(" ","-");
+  }
+  // Only change code above this line
+  urlSlug(" Winter Is  Coming") //should return the string winter-is-coming.
+  urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone"); 
+  //should return the string a-mind-needs-books-like-a-sword-needs-a-whetstone
+
+
+const numbers = [1, 5, 8, 0, 10, 11];
+
+numbers.every(function(currentValue) {
+  return currentValue < 10;
+});
+//The every method would return false here.
+
+function checkPositive(arr) {
+  // Only change code below this line
+return arr.every(function(currentValue){
+  return currentValue >0;
+});
+  // Only change code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
+checkPositive([1, 2, 3, -4, 5]) //should return false.
+checkPositive([1, 2, 3, 4, 5]) //should return true
+
+
+const numberss = [10, 50, 8, 220, 110, 11];
+
+numberss.some(function(currentValue) {
+  return currentValue < 10;
+});
+//The some method would return true
+
+function checkPositive(arr) {
+  // Only change code below this line
+return arr.some(function(num){
+  return num>0;
+});
+  // Only change code above this line
+}
+
+checkPositive([1, 2, 3, -4, 5]);
+checkPositive([1, 2, 3, -4, 5]) //should return true.
+checkPositive([1, 2, 3, 4, 5]) //should return true.
+checkPositive([-1, -2, -3, -4, -5]) //should return false
+
+
+function add(x) {
+  // Only change code below this line
+return function(y){
+  return function(z){
+    return x+y+z;
+  }
+}
+  // Only change code above this line
+}
+
+add(10)(20)(30);
